@@ -1,0 +1,11 @@
+<h2 class="text-center">Get API</h2>
+<app-alert [message]="'This is Get API'"></app-alert>
+<div class="row mt-5">
+
+    <div class="col-12">
+        <button class="btn btn-success" (click)="getAllUser()">Get Data</button>
+    </div>
+    @for(items of userData;track items){
+        <span>{{items.name}}</span>
+    }
+</div>

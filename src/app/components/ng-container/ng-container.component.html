@@ -1,0 +1,80 @@
+<h2 class="text-center">Ng-Container Directive</h2>
+
+<div class="container">
+    <div class="row">
+        <div class="col-6">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Sr No</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <!-- <th>Action</th> -->
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    @for(user of userData;track user){
+                    <tr>
+                        @if(!isApi){
+                        <ng-container>
+                            <td>
+                                <div class="spinner-grow text-secondary" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="spinner-grow text-success" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="spinner-grow text-danger" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </td>
+                        </ng-container>
+                        }
+                    </tr>
+
+                    <tr>
+                        @if(isApi){
+                        <!-- <th scope="row">1</th> -->
+                        <ng-container>
+                            <td>{{user.id}}</td>
+                            <td>{{user.name}}</td>
+                            <td>{{user.email}}</td>
+                        </ng-container>
+                        }
+                    </tr>
+
+
+                    }
+                </tbody>
+            </table>
+         
+        </div>
+        <div class="col-4">
+            <button class="btn btn-success" (click)="getUser()">Get Data</button> <br><br><br>
+            <small>ng-directive showsdata on certain condition because ngIf and ngfalse cant use with one element and it is imaginry</small>
+        </div>
+    </div>
+</div>
+
+
+<h2 class="text-center mt-5">View Child</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            View child Decorator is just like accessing dom element with class and id in javacsript <br>
+             Like in js: &nbsp;<small class="text-primary"> document.getElementById('idname')</small> <br>
+             in Angular : &nbsp; <small class="text-danger">&#64;ViewChild('#name')</small>
+
+        </div>
+        <div class="col-4 text-center">
+            <input type="text" value="Laptop" #txt>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>

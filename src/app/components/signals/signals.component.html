@@ -1,0 +1,20 @@
+<h2 class="text-center">Signals</h2>
+
+<div class="row text-center">
+    <div class="col-4">
+      Signals:  {{firstname()}} <br> <br>
+      Signals with datatype:  {{rollNo()}}
+    </div>
+    <div class="col-4">
+        <small class="text-danager">How to change value of a signal</small> <br><br>
+        <p class="font-bold">full name: {{fullName()}}</p>
+        <button class="btn btn-success" (click)="changefName()">Change</button>
+        <button class="btn btn-danger" (click)="changelName()">Change</button>
+    </div>
+    <div class="col-4">
+        <!-- <p>Signal doesnot need zone js</p> -->
+         <p>Signals with Arrays</p>
+         <b>{{provinceList()}}</b> <br>
+         <button class="btn btn-danger" (click)="addProvince()">Add</button>
+    </div>
+</div>

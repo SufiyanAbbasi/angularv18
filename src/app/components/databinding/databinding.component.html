@@ -1,0 +1,46 @@
+<h1 class="fs-3 text-center">Data Binding</h1>
+
+<div class="row">
+    <div class="col-md-4">
+        <p class="text-secondary text-center">One way from component to html</p>
+    </div>
+    <div class="col-md-4">
+        <p class="text-secondary text-center">Two way Data Binding</p>
+
+    </div>
+    <div class="col-md-4">
+        <p class="text-secondary text-center">Signals</p>
+
+    </div>
+</div>
+
+<div class="row ">
+    <div class="col-md-4 border border-1">
+        <div class="row">
+            <div class="col-4  text-center ">
+                <p class="bg-success">Interpolation</p>
+                <h4 class="fs-6">{{coursename}}</h4>
+                <h2>{{marks}}</h2>
+                <!-- <input type="text" value="{{coursename}}" placeholder="Enter Text"> -->
+            </div>
+            <div class="col-4 text-center">
+                <p class="bg-secondary">Property Binding</p>
+                <h5 [class]="myClass">Sufiyan</h5>
+            </div>
+            <div class="col-4 text-center">
+                <p class="bg-secondary">From Html to ts</p>
+                <button class="btn btn-success" (click)="showAlert('Welcome to angular 18')">Welcome</button>
+                <button class="btn btn-success mt-3" (click)="changeCourseName()">Change</button>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 border border-1">
+        <p class="bg-success text-center">2way Data Bindnig</p>
+        <input type="text" [(ngModel)]="changeCourse">{{changeCourse}}
+    </div>
+    <div class="col-md-4 border border-1">
+        <p class="bg-success text-center">Signals</p>
+        <small>signal value can be change using set method but not like variable</small>
+        <h3>{{firstName()}}</h3>
+    </div>
+</div>

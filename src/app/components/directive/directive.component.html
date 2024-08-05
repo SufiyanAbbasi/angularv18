@@ -1,0 +1,71 @@
+<h2 class="text-center">Directives</h2>
+
+<h3 class="text-center text-white bg-success">Structural Directives</h3>
+
+<div class="container">
+    <h3 class="text-center text-primary">If-ngIf</h3>
+    <div class="row">
+        <div class="col-3 text-center ">
+            @if(isDiv1Visible){
+            <div class="bg-danger p-2 text-center fs-2">Div-1</div>
+            }
+            <button class="btn btn-danger mt-2 me-2 rounded-2" (click)="hideDiv1()">Hide</button>
+            <button class="btn btn-primary mt-2  rounded-2" (click)="showDiv1()">Show</button>
+        </div>
+
+        <div class="col-3 text-center">
+            @if(isDiv2Visible){
+            <div class="bg-success p-2 text-center fs-2">Div-2</div>
+            }
+            <button class="btn btn-success mt-2 me-2 rounded-2" (click)="toggle()">Toggle</button>
+        </div>
+
+        <div class="col-3 text-center">
+            @if(num1 == num2){
+            <div class="bg-secondary p-2 text-center fs-2">Div-3</div>
+            }
+            <input type="text" [(ngModel)]="num1" class="mt-2" value="Num-1">
+            <input type="text" [(ngModel)]="num2" class="mt-2" value="Num-2">
+        </div>
+
+
+        <div class="col-3 text-center">
+            @if(isChecked){
+            <div class="bg-primary p-2 text-center fs-2">Div-4</div>
+            }
+            <input type="checkbox" (click)="checkBox()">
+            <select name="" class="mt-2 ms-2 p-2">
+                <option value="">Selected State</option>
+                <option value="">lahore</option>
+                <option value="">atd</option>
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <h3 class="text-center text-primary">for-ngFor</h3>
+
+        <div class="col-md-12 text-center">
+            <label for="">Select City:</label>
+            <select name="city" class="mt-2 ms-2 p-2">Select City:
+                @for(items of city; track items){
+                <option value="{{items}}">{{items}}</option>
+                }
+            </select>
+        </div>
+    </div>
+</div>
+
+<h3 class="text-center text-white bg-success mt-5">Attribute Directives</h3>
+<div class="container ">
+    <h3 class="text-center text-primary">[ngclass-ngStyle]</h3>
+    <div class="col-4 text-center ">
+        @if(isDiv1Visible){
+        <div class=" p-5 rounded-3 text-center fs-2" [ngClass]="div1BgColor">Div-1</div>
+        }
+        <button class="btn btn-danger mt-2 me-2 rounded-2" (click)="addRedClass()">Add Red</button>
+        <button class="btn btn-primary mt-2  rounded-2" (click)="addBlueClass()">Add Blue</button>
+    </div>
+</div>
